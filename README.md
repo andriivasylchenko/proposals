@@ -14,7 +14,7 @@ In this scenario, you are helping salesman to automate the process of transferri
 * how-to integrate Cloud Foundry application with Salesforce using App Connect
 * how-to share App Connect flow via IBM Cloud native API Management capabilities
 
-Check End-to-end walkthrough video by click on the image below
+Check End-to-end walkthrough video by clicking on the image below
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Ybt7OYPwfno/0.jpg)](https://www.youtube.com/watch?v=Ybt7OYPwfno)
 
