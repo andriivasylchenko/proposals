@@ -1,0 +1,73 @@
+swagger: '2.0'
+info:
+  x-ibm-name: proposals
+  version: 1.0.0
+  title: proposals
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /add:
+    post:
+      tags:
+        - proposals
+      summary: Add new proposal to the system.
+      operationId: proposals.add
+      parameters:
+        - name: proposalsData
+          in: body
+          description: Model instance data
+          required: true
+          schema:
+            description: Model instance data
+            $ref: '#/definitions/proposals'
+      responses:
+        '200':
+          description: Request was successful
+          schema:
+            $ref: '#/definitions/proposals'
+        '400':
+          description: Validation Error
+          schema:
+            $ref: '#/definitions/unknownError'
+      deprecated: false
+definitions:
+  proposals:
+    type: "object"
+    properties:
+      ContactName:
+        type: string
+      BusinessName:
+        type: string
+      BusinessType:
+        type: string
+      TotalCurrentFees:
+        type: number
+        format: double
+      TotalNewFees:
+        type: number
+        format: double
+    required:
+      - ContactName
+      - BusinessName
+      - BusinessType
+      - TotalCurrentFees
+      - TotalNewFees
+    additionalProperties: true
+  unknownError:
+    type: "object"
+    properties:
+      error:
+        type: object
+        properties: 
+          statusCode:
+            type: number
+          name:
+            type: string
+          message:
+            type: string
+    additionalProperties: true
